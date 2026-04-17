@@ -56,6 +56,7 @@ export default function RegisterScreen() {
 
           <View style={styles.form}>
             <TextInput
+              testID="register-email-input"
               style={styles.input}
               placeholder="Email"
               value={email}
@@ -66,6 +67,7 @@ export default function RegisterScreen() {
             />
 
             <TextInput
+              testID="register-fullname-input"
               style={styles.input}
               placeholder="Full Name"
               value={fullName}
@@ -74,6 +76,7 @@ export default function RegisterScreen() {
             />
 
             <TextInput
+              testID="register-username-input"
               style={styles.input}
               placeholder="Username"
               value={username}
@@ -83,6 +86,7 @@ export default function RegisterScreen() {
             />
 
             <TextInput
+              testID="register-password-input"
               style={styles.input}
               placeholder="Password"
               value={password}
@@ -92,6 +96,7 @@ export default function RegisterScreen() {
             />
 
             <TouchableOpacity
+              testID="register-submit-btn"
               style={[styles.button, loading && styles.buttonDisabled]}
               onPress={handleRegister}
               disabled={loading}
@@ -107,7 +112,7 @@ export default function RegisterScreen() {
               <View style={styles.dividerLine} />
             </View>
 
-            <TouchableOpacity onPress={() => router.back()}>
+            <TouchableOpacity testID="login-link-btn" onPress={() => router.back()}>
               <Text style={styles.loginText}>
                 Already have an account? <Text style={styles.loginLink}>Log in</Text>
               </Text>

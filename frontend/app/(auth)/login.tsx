@@ -49,6 +49,7 @@ export default function LoginScreen() {
 
           <View style={styles.form}>
             <TextInput
+              testID="login-identifier-input"
               style={styles.input}
               placeholder="Email, phone or username"
               value={identifier}
@@ -58,6 +59,7 @@ export default function LoginScreen() {
             />
 
             <TextInput
+              testID="login-password-input"
               style={styles.input}
               placeholder="Password"
               value={password}
@@ -67,6 +69,7 @@ export default function LoginScreen() {
             />
 
             <TouchableOpacity
+              testID="login-submit-btn"
               style={[styles.button, loading && styles.buttonDisabled]}
               onPress={handleLogin}
               disabled={loading}
@@ -82,7 +85,7 @@ export default function LoginScreen() {
               <View style={styles.dividerLine} />
             </View>
 
-            <TouchableOpacity onPress={() => router.push('/(auth)/register')}>
+            <TouchableOpacity testID="signup-link-btn" onPress={() => router.push('/(auth)/register')}>
               <Text style={styles.signupText}>
                 Don't have an account? <Text style={styles.signupLink}>Sign up</Text>
               </Text>
