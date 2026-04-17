@@ -11,6 +11,8 @@ import {
   Modal,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAuth } from '../../src/contexts/AuthContext';
 import { MOCK_POSTS, MOCK_STORIES, MockPost, MockStory } from '../../src/data/mockData';
 import { formatDistanceToNow } from 'date-fns';
@@ -19,6 +21,8 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export default function HomeScreen() {
   const { user } = useAuth();
+  const router = useRouter();
+  const insets = useSafeAreaInsets();
   const [posts, setPosts] = useState<MockPost[]>(MOCK_POSTS);
   const [stories] = useState<MockStory[]>(MOCK_STORIES);
   const [refreshing, setRefreshing] = useState(false);
@@ -142,14 +146,14 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
         <Text style={styles.headerTitle}>Moments</Text>
         <View style={styles.headerRight}>
-          <TouchableOpacity testID="notifications-btn" style={styles.headerIcon}>
-            <Ionicons name="heart-outline" size={26} color="#333" />
+          <TouchableOpacity testID="notifications-btn" style={styles.headerIcon} onPress={() => router.push('/notifications')}>
+            <Ionicons name="heart-outline" size={26} color="#2C3E50" />
           </TouchableOpacity>
-          <TouchableOpacity testID="dm-btn" style={styles.headerIcon}>
-            <Ionicons name="paper-plane-outline" size={26} color="#333" />
+          <TouchableOpacity testID="dm-btn" style={styles.headerIcon} onPress={() => router.push('/add-post')}>
+            <Ionicons name="add-circle-outline" size={26} color="#2C3E50" />
           </TouchableOpacity>
         </View>
       </View>
@@ -203,7 +207,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 12,
-    paddingTop: 48,
     borderBottomWidth: 1,
     borderBottomColor: '#F0F0F0',
     backgroundColor: '#FFFFFF',

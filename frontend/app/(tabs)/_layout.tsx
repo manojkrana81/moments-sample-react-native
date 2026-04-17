@@ -1,65 +1,67 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function TabsLayout() {
+  const insets = useSafeAreaInsets();
+
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: '#4A90E2',
-        tabBarInactiveTintColor: '#999',
+        tabBarActiveTintColor: '#2C3E50',
+        tabBarInactiveTintColor: '#95A5A6',
+        tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: '#FFFFFF',
-          borderTopColor: '#E0E0E0',
+          borderTopColor: '#F0F0F0',
           borderTopWidth: 1,
-          height: 60,
-          paddingBottom: 8,
-          paddingTop: 8,
+          height: 50 + insets.bottom,
+          paddingBottom: insets.bottom,
+          paddingTop: 6,
+          elevation: 0,
+          shadowOpacity: 0,
         },
       }}
     >
       <Tabs.Screen
         name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'home' : 'home-outline'} size={26} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="search"
         options={{
-          title: 'Search',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="search" size={size} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'search' : 'search-outline'} size={26} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="add-post"
+        name="reels"
         options={{
-          title: '',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="add-circle" size={size + 8} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'play-circle' : 'play-circle-outline'} size={30} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="messages"
         options={{
-          title: 'Messages',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="chatbubble" size={size} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline'} size={26} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" size={size} color={color} />
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'person-circle' : 'person-circle-outline'} size={28} color={color} />
           ),
         }}
       />
