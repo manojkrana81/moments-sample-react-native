@@ -1,0 +1,122 @@
+{
+  "theme_and_archetype": {
+    "theme": "Light",
+    "archetype": "Editorial & Raw",
+    "description": "A premium, function-forward, asymmetrical design that breaks away from standard social media templates. Focuses on full-width imagery, clean typography, visible structural elements (like thin borders), and minimal decoration to feel completely different from Instagram.",
+    "primary_color": "#3366A0"
+  },
+  "colors": {
+    "background": {
+      "primary": "#FFFFFF",
+      "secondary": "#FAFAFA",
+      "tertiary": "#F3F4F6"
+    },
+    "brand": {
+      "primary": "#3366A0",
+      "primary_light": "#EBF0F6",
+      "accent": "#1D4ED8"
+    },
+    "text": {
+      "primary": "#0A0A0A",
+      "secondary": "#525252",
+      "muted": "#A3A3A3",
+      "inverse": "#FFFFFF"
+    },
+    "border": {
+      "subtle": "#F5F5F5",
+      "default": "#E5E5E5",
+      "strong": "#D4D4D4"
+    }
+  },
+  "typography": {
+    "description": "High contrast between structured headers and clean functional body text. Use React Native system fonts.",
+    "font_families": {
+      "heading": "System Bold / Heavy",
+      "body": "System Regular",
+      "mono": "System Mono"
+    },
+    "sizes": {
+      "h1": { "fontSize": 36, "fontWeight": "800", "letterSpacing": -1 },
+      "h2": { "fontSize": 28, "fontWeight": "700", "letterSpacing": -0.5 },
+      "h3": { "fontSize": 20, "fontWeight": "600", "letterSpacing": 0 },
+      "body": { "fontSize": 15, "fontWeight": "400", "lineHeight": 22 },
+      "small": { "fontSize": 12, "fontWeight": "500", "letterSpacing": 0.5, "textTransform": "uppercase" }
+    }
+  },
+  "spacing_and_radii": {
+    "spacing": {
+      "xs": 4,
+      "sm": 8,
+      "md": 16,
+      "lg": 24,
+      "xl": 32,
+      "xxl": 48
+    },
+    "radii": {
+      "sharp": 0,
+      "sm": 4,
+      "md": 8,
+      "lg": 16,
+      "pill": 999
+    }
+  },
+  "component_path": "/app/src/components/",
+  "components": {
+    "MoView": "Base container wrapping React Native View. Supports safe area, padding, and semantic background colors.",
+    "MoText": "Text wrapper implementing typography system. Props: variant (h1, h2, body), color (primary, secondary).",
+    "MoButton": "Primary buttons are solid #3366A0 with sharp corners (radius 0 or 4). Secondary are outlined.",
+    "MoImage": "Image component. Feed posts must be full-width (100% width, 0 horizontal margin).",
+    "MoAvatar": "Square or squicle (radius 4-8) avatars, not perfectly circular. No gradient rings for stories.",
+    "MoCard": "Flat surfaces with 1px border (#E5E5E5), no drop shadows, sharp edges."
+  },
+  "layout_patterns": {
+    "Home_Feed": "Full width imagery edge-to-edge. Captions underneath with thick left border or indentation. Asymmetrical engagement buttons (e.g., stacked on the right or text-based at bottom).",
+    "Stories": "Horizontal scroll. Use square avatars with thin #3366A0 borders instead of circular gradient rings.",
+    "Reels": "Vertical paging scroll. Full screen. Engagement UI pushed to bottom left instead of floating right.",
+    "Profile": "Asymmetrical header. Stats using large typography. Feed grid uses masonry layout or alternating large/small rectangles instead of 3x3 squares.",
+    "Navigation": "Floating pill-shaped bottom tab bar with glassmorphic effect or solid #FFFFFF with thin border, detached from bottom edge.",
+    "Messages": "Minimalist chat bubbles. Sharp corners on one side, rounded on others."
+  },
+  "image_urls": {
+    "feed_posts": [
+      {
+        "url": "https://images.unsplash.com/photo-1766103809717-f57039c6d0ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHxjcmVhdGl2ZSUyMGVkaXRvcmlhbCUyMGZhc2hpb24lMjBwaG90b2dyYXBoeXxlbnwwfHx8fDE3NzY0OTU5NTN8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Fashion portrait, use for feed post mock"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1774267916884-afae166d49b3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHw0fHxtaW5pbWFsaXN0JTIwYXJjaGl0ZWN0dXJlJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8fHwxNzc2NDk1OTUzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Minimalist architecture, use for feed post mock"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1774516534097-76eb46de7229?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODd8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwYXJjaGl0ZWN0dXJlJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MHx8fHwxNzc2NDk1OTUzfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Architecture interior, use for feed post mock"
+      }
+    ],
+    "avatars": [
+      {
+        "url": "https://images.unsplash.com/photo-1690106724630-637312f7b0ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxhZXN0aGV0aWMlMjBwb3J0cmFpdCUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc3NjQ5NTk1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Woman portrait, use for stories and user profile"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1651397052504-9ca5b881b64f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHw0fHxhZXN0aGV0aWMlMjBwb3J0cmFpdCUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc3NjQ5NTk1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Woman sitting, use for stories"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1608882122140-6693d924367f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxhZXN0aGV0aWMlMjBwb3J0cmFpdCUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc3NjQ5NTk1M3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Building, use for abstract avatar"
+      }
+    ]
+  },
+  "testing_and_accessibility": {
+    "rules": "All interactive elements (buttons, links, inputs) MUST have a testID attribute. Use kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "Build a React Native Expo application using standard StyleSheet. The user requested .js files, not .tsx.",
+    "Implement the 25 requested screens, ensuring navigation flows between them. Use @react-navigation/native.",
+    "Create reusable components prefixed with 'Mo' (MoView, MoText, MoButton, MoImage, MoAvatar) in a components directory and use them exclusively to build UI.",
+    "Strictly follow the color palette with #3366A0 as the primary brand color.",
+    "Do not use HTML tags like <div> or <span>. Use React Native components.",
+    "Avoid typical Instagram clones. Use square/squicle avatars, full-width feed images, floating bottom tab bar, and masonry profile grids.",
+    "Add 'testID' to all TouchableOpacity and TextInput components for E2E testing."
+  ]
+}
