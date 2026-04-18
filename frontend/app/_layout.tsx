@@ -6,8 +6,8 @@ import { StatusBar } from 'expo-status-bar';
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <StatusBar style="light" />
-      <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right', contentStyle: { backgroundColor: '#0A1628' } }}>
+      <StatusBar style="dark" />
+      <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right', contentStyle: { backgroundColor: '#FFFFFF' } }}>
         <Stack.Screen name="index" />
         <Stack.Screen name="(auth)" />
         <Stack.Screen name="(tabs)" />
@@ -26,6 +26,11 @@ export default function RootLayout() {
         <Stack.Screen name="story-highlights" />
         <Stack.Screen name="insights" />
         <Stack.Screen name="qr-profile" />
+        <Stack.Screen name="change-password" options={{ animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="user-activity" />
+        <Stack.Screen name="blocked-users" />
+        <Stack.Screen name="privacy-settings" />
+        <Stack.Screen name="notification-preferences" />
       </Stack>
     </AuthProvider>
   );
