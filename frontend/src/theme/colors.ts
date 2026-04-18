@@ -7,11 +7,11 @@ export const C = {
   elevated: '#E8ECF1',
   
   // Navy accents
-  navy: '#1B3A5C',
-  navyLight: '#2E5C8A',
-  navyMuted: '#4A7AB5',
-  accent: '#3B7DD8',
-  accentLight: '#5B9AE8',
+  navy: '#3366A0',
+  navyLight: '#4A80BA',
+  navyMuted: '#6B9DD4',
+  accent: '#5088C8',
+  accentLight: '#72A8E0',
   
   // Text
   text: '#1A1A2E',
@@ -32,7 +32,7 @@ export const C = {
   
   // Special
   goldBorder: '#E5E7EB',
-  goldGlow: '#F0F4FF',
-  gold: '#1B3A5C',
+  goldGlow: '#EEF3FC',
+  gold: '#3366A0',
   overlay: 'rgba(0, 0, 0, 0.5)',
 };
