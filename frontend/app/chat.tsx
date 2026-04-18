@@ -47,7 +47,7 @@ export default function ChatScreen() {
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity testID="back-chat-btn" onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="#2C3E50" />
+          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <View style={styles.headerUser}>
           <Image source={{ uri: conv.profile_picture }} style={styles.headerAvatar} />
@@ -57,8 +57,8 @@ export default function ChatScreen() {
           </View>
         </View>
         <View style={styles.headerActions}>
-          <TouchableOpacity><Ionicons name="call-outline" size={22} color="#2C3E50" /></TouchableOpacity>
-          <TouchableOpacity><Ionicons name="videocam-outline" size={24} color="#2C3E50" /></TouchableOpacity>
+          <TouchableOpacity><Ionicons name="call-outline" size={22} color="#FFFFFF" /></TouchableOpacity>
+          <TouchableOpacity><Ionicons name="videocam-outline" size={24} color="#FFFFFF" /></TouchableOpacity>
         </View>
       </View>
 
@@ -67,14 +67,14 @@ export default function ChatScreen() {
       />
 
       <View style={[styles.inputBar, { paddingBottom: Math.max(insets.bottom, 8) }]}>
-        <TouchableOpacity style={styles.inputIcon}><Ionicons name="camera-outline" size={24} color="#4A90E2" /></TouchableOpacity>
-        <TextInput testID="chat-input" style={styles.input} placeholder="Message..." value={text} onChangeText={setText} placeholderTextColor="#95A5A6" />
+        <TouchableOpacity style={styles.inputIcon}><Ionicons name="camera-outline" size={24} color="#D4AF37" /></TouchableOpacity>
+        <TextInput testID="chat-input" style={styles.input} placeholder="Message..." value={text} onChangeText={setText} placeholderTextColor="#3D5278" />
         {text.trim() ? (
-          <TouchableOpacity testID="send-btn" onPress={send}><Ionicons name="send" size={22} color="#4A90E2" /></TouchableOpacity>
+          <TouchableOpacity testID="send-btn" onPress={send}><Ionicons name="send" size={22} color="#D4AF37" /></TouchableOpacity>
         ) : (
           <View style={styles.inputActions}>
-            <TouchableOpacity><Ionicons name="mic-outline" size={24} color="#4A90E2" /></TouchableOpacity>
-            <TouchableOpacity><Ionicons name="image-outline" size={24} color="#4A90E2" /></TouchableOpacity>
+            <TouchableOpacity><Ionicons name="mic-outline" size={24} color="#D4AF37" /></TouchableOpacity>
+            <TouchableOpacity><Ionicons name="image-outline" size={24} color="#D4AF37" /></TouchableOpacity>
           </View>
         )}
       </View>
@@ -83,26 +83,26 @@ export default function ChatScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: '#F0F0F0', gap: 8 },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingVertical: 10, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)', gap: 8 },
   headerUser: { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10, marginLeft: 4 },
   headerAvatar: { width: 36, height: 36, borderRadius: 18 },
-  headerName: { fontSize: 16, fontWeight: '600', color: '#2C3E50' },
-  headerStatus: { fontSize: 12, color: '#27AE60' },
+  headerName: { fontSize: 16, fontWeight: '600', color: '#FFFFFF' },
+  headerStatus: { fontSize: 12, color: '#2ED573' },
   headerActions: { flexDirection: 'row', gap: 16 },
   messagesList: { padding: 16, paddingBottom: 8 },
   msgRow: { marginBottom: 12, alignItems: 'flex-start' },
   msgRowRight: { alignItems: 'flex-end' },
   bubble: { maxWidth: '78%', paddingHorizontal: 14, paddingVertical: 10, borderRadius: 20 },
-  myBubble: { backgroundColor: '#4A90E2', borderBottomRightRadius: 4 },
-  theirBubble: { backgroundColor: '#F0F1F3', borderBottomLeftRadius: 4 },
-  msgText: { fontSize: 15, color: '#2C3E50', lineHeight: 20 },
-  myText: { color: '#FFF' },
-  msgTime: { fontSize: 11, color: '#95A5A6', marginTop: 4, marginHorizontal: 4 },
+  myBubble: { backgroundColor: '#D4AF37', borderBottomRightRadius: 4 },
+  theirBubble: { backgroundColor: '#152238', borderBottomLeftRadius: 4 },
+  msgText: { fontSize: 15, color: '#FFFFFF', lineHeight: 20 },
+  myText: { color: '#0A1628' },
+  msgTime: { fontSize: 11, color: '#3D5278', marginTop: 4, marginHorizontal: 4 },
   empty: { padding: 60, alignItems: 'center' },
-  emptyText: { color: '#95A5A6', fontSize: 16 },
-  inputBar: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingTop: 8, borderTopWidth: 1, borderTopColor: '#F0F0F0', backgroundColor: '#FFF', gap: 8 },
+  emptyText: { color: '#3D5278', fontSize: 16 },
+  inputBar: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 12, paddingTop: 8, borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.06)', backgroundColor: '#0A1628', gap: 8 },
   inputIcon: { padding: 4 },
-  input: { flex: 1, backgroundColor: '#F5F6F7', borderRadius: 22, paddingHorizontal: 16, paddingVertical: 10, fontSize: 15, color: '#2C3E50' },
+  input: { flex: 1, backgroundColor: '#0F1D32', borderRadius: 22, paddingHorizontal: 16, paddingVertical: 10, fontSize: 15, color: '#FFFFFF' },
   inputActions: { flexDirection: 'row', gap: 12 },
 });

@@ -38,27 +38,27 @@ export default function EditProfileScreen() {
           </View>
           <Text style={styles.changePhoto}>Change Profile Photo</Text>
         </TouchableOpacity>
-        <View style={styles.field}><Text style={styles.label}>Name</Text><TextInput testID="edit-name" style={styles.input} value={fullName} onChangeText={setFullName} placeholder="Full name" placeholderTextColor="#BDC3C7" /></View>
-        <View style={styles.field}><Text style={styles.label}>Username</Text><TextInput testID="edit-username" style={styles.input} value={username} onChangeText={setUsername} placeholder="Username" autoCapitalize="none" placeholderTextColor="#BDC3C7" /></View>
-        <View style={styles.field}><Text style={styles.label}>Bio</Text><TextInput testID="edit-bio" style={[styles.input, styles.bioInput]} value={bio} onChangeText={setBio} placeholder="Write a bio..." multiline maxLength={150} placeholderTextColor="#BDC3C7" /></View>
+        <View style={styles.field}><Text style={styles.label}>Name</Text><TextInput testID="edit-name" style={styles.input} value={fullName} onChangeText={setFullName} placeholder="Full name" placeholderTextColor="#3D5278" /></View>
+        <View style={styles.field}><Text style={styles.label}>Username</Text><TextInput testID="edit-username" style={styles.input} value={username} onChangeText={setUsername} placeholder="Username" autoCapitalize="none" placeholderTextColor="#3D5278" /></View>
+        <View style={styles.field}><Text style={styles.label}>Bio</Text><TextInput testID="edit-bio" style={[styles.input, styles.bioInput]} value={bio} onChangeText={setBio} placeholder="Write a bio..." multiline maxLength={150} placeholderTextColor="#3D5278" /></View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  headerTitle: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
-  cancelText: { fontSize: 16, color: '#95A5A6' },
-  saveText: { fontSize: 16, color: '#4A90E2', fontWeight: '700' },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  headerTitle: { fontSize: 18, fontWeight: '600', color: '#FFFFFF' },
+  cancelText: { fontSize: 16, color: '#3D5278' },
+  saveText: { fontSize: 16, color: '#D4AF37', fontWeight: '700' },
   content: { padding: 20 },
   avatarSection: { alignItems: 'center', marginBottom: 28 },
-  avatarPlaceholder: { width: 80, height: 80, borderRadius: 40, backgroundColor: '#4A90E2', justifyContent: 'center', alignItems: 'center', marginBottom: 10 },
-  avatarInitial: { fontSize: 32, fontWeight: '700', color: '#FFF' },
-  changePhoto: { color: '#4A90E2', fontSize: 14, fontWeight: '600' },
+  avatarPlaceholder: { width: 80, height: 80, borderRadius: 40, backgroundColor: '#D4AF37', justifyContent: 'center', alignItems: 'center', marginBottom: 10 },
+  avatarInitial: { fontSize: 32, fontWeight: '700', color: '#0A1628' },
+  changePhoto: { color: '#D4AF37', fontSize: 14, fontWeight: '600' },
   field: { marginBottom: 20 },
-  label: { fontSize: 13, color: '#7F8C8D', marginBottom: 6, fontWeight: '600' },
-  input: { borderBottomWidth: 1, borderBottomColor: '#E8ECF0', paddingVertical: 10, fontSize: 16, color: '#2C3E50' },
+  label: { fontSize: 13, color: '#6B82A6', marginBottom: 6, fontWeight: '600' },
+  input: { borderBottomWidth: 1, borderBottomColor: '#E8ECF0', paddingVertical: 10, fontSize: 16, color: '#FFFFFF' },
   bioInput: { minHeight: 60, textAlignVertical: 'top' },
 });

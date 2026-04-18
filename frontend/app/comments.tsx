@@ -36,7 +36,7 @@ export default function CommentsScreen() {
           <TouchableOpacity><Text style={styles.replyBtn}>Reply</Text></TouchableOpacity>
         </View>
       </View>
-      <TouchableOpacity style={styles.commentLikeBtn}><Ionicons name="heart-outline" size={14} color="#95A5A6" /></TouchableOpacity>
+      <TouchableOpacity style={styles.commentLikeBtn}><Ionicons name="heart-outline" size={14} color="#3D5278" /></TouchableOpacity>
     </View>
   );
 
@@ -44,10 +44,10 @@ export default function CommentsScreen() {
     <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity testID="back-comments-btn" onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="#2C3E50" />
+          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Comments</Text>
-        <TouchableOpacity><Ionicons name="paper-plane-outline" size={22} color="#2C3E50" /></TouchableOpacity>
+        <TouchableOpacity><Ionicons name="paper-plane-outline" size={22} color="#FFFFFF" /></TouchableOpacity>
       </View>
       {/* Original post caption */}
       <View style={styles.captionSection}>
@@ -65,7 +65,7 @@ export default function CommentsScreen() {
       />
       <View style={[styles.inputBar, { paddingBottom: Math.max(insets.bottom, 8) }]}>
         <View style={styles.inputRow}>
-          <TextInput testID="comment-input" style={styles.input} placeholder="Add a comment..." value={newComment} onChangeText={setNewComment} placeholderTextColor="#95A5A6" />
+          <TextInput testID="comment-input" style={styles.input} placeholder="Add a comment..." value={newComment} onChangeText={setNewComment} placeholderTextColor="#3D5278" />
           <TouchableOpacity testID="post-comment-btn" onPress={addComment} disabled={!newComment.trim()}>
             <Text style={[styles.postBtn, !newComment.trim() && styles.postBtnDisabled]}>Post</Text>
           </TouchableOpacity>
@@ -76,27 +76,27 @@ export default function CommentsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  headerTitle: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  headerTitle: { fontSize: 18, fontWeight: '600', color: '#FFFFFF' },
   captionSection: { flexDirection: 'row', padding: 16, gap: 12 },
   avatar: { width: 36, height: 36, borderRadius: 18 },
   commentBody: { flex: 1 },
-  commentText: { fontSize: 14, color: '#2C3E50', lineHeight: 18 },
+  commentText: { fontSize: 14, color: '#FFFFFF', lineHeight: 18 },
   commentUser: { fontWeight: '700' },
   commentMeta: { flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: 6 },
-  commentTime: { fontSize: 12, color: '#95A5A6' },
-  commentLikes: { fontSize: 12, color: '#95A5A6', fontWeight: '600' },
-  replyBtn: { fontSize: 12, color: '#95A5A6', fontWeight: '600' },
-  divider: { height: 1, backgroundColor: '#F0F0F0' },
+  commentTime: { fontSize: 12, color: '#3D5278' },
+  commentLikes: { fontSize: 12, color: '#3D5278', fontWeight: '600' },
+  replyBtn: { fontSize: 12, color: '#3D5278', fontWeight: '600' },
+  divider: { height: 1, backgroundColor: 'rgba(255,255,255,0.06)' },
   commentsList: { paddingVertical: 8 },
   commentItem: { flexDirection: 'row', paddingHorizontal: 16, paddingVertical: 10, gap: 12 },
   commentLikeBtn: { paddingTop: 4 },
   empty: { padding: 40, alignItems: 'center' },
-  emptyText: { color: '#95A5A6', fontSize: 14 },
-  inputBar: { borderTopWidth: 1, borderTopColor: '#F0F0F0', paddingHorizontal: 16, paddingTop: 8, backgroundColor: '#FFF' },
+  emptyText: { color: '#3D5278', fontSize: 14 },
+  inputBar: { borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.06)', paddingHorizontal: 16, paddingTop: 8, backgroundColor: '#0A1628' },
   inputRow: { flexDirection: 'row', alignItems: 'center' },
-  input: { flex: 1, backgroundColor: '#F5F6F7', borderRadius: 20, paddingHorizontal: 16, paddingVertical: 10, fontSize: 14, marginRight: 8, color: '#2C3E50' },
-  postBtn: { color: '#4A90E2', fontWeight: '700', fontSize: 14 },
-  postBtnDisabled: { color: '#BDC3C7' },
+  input: { flex: 1, backgroundColor: '#0F1D32', borderRadius: 20, paddingHorizontal: 16, paddingVertical: 10, fontSize: 14, marginRight: 8, color: '#FFFFFF' },
+  postBtn: { color: '#D4AF37', fontWeight: '700', fontSize: 14 },
+  postBtnDisabled: { color: '#3D5278' },
 });

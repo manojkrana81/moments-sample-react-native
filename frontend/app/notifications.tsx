@@ -14,8 +14,8 @@ export default function NotificationsScreen() {
   const getIcon = (type: string) => {
     switch (type) {
       case 'like': return { name: 'heart' as const, color: '#FF3B30' };
-      case 'comment': return { name: 'chatbubble' as const, color: '#4A90E2' };
-      case 'follow': return { name: 'person-add' as const, color: '#27AE60' };
+      case 'comment': return { name: 'chatbubble' as const, color: '#D4AF37' };
+      case 'follow': return { name: 'person-add' as const, color: '#2ED573' };
       case 'mention': return { name: 'at' as const, color: '#8E44AD' };
       default: return { name: 'notifications' as const, color: '#666' };
     }
@@ -45,7 +45,7 @@ export default function NotificationsScreen() {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity testID="back-notif-btn" onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="#2C3E50" />
+          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Notifications</Text>
         <View style={{ width: 24 }} />
@@ -61,17 +61,17 @@ export default function NotificationsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  headerTitle: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  headerTitle: { fontSize: 18, fontWeight: '600', color: '#FFFFFF' },
   notifItem: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, gap: 12 },
   unread: { backgroundColor: '#F0F7FF' },
   avatar: { width: 44, height: 44, borderRadius: 22 },
   notifContent: { flex: 1 },
-  notifText: { fontSize: 14, color: '#2C3E50', lineHeight: 18 },
+  notifText: { fontSize: 14, color: '#FFFFFF', lineHeight: 18 },
   notifUsername: { fontWeight: '700' },
-  notifTime: { fontSize: 12, color: '#95A5A6', marginTop: 2 },
+  notifTime: { fontSize: 12, color: '#3D5278', marginTop: 2 },
   postThumb: { width: 44, height: 44, borderRadius: 4 },
-  followBtn: { backgroundColor: '#4A90E2', paddingHorizontal: 16, paddingVertical: 6, borderRadius: 6 },
-  followBtnText: { color: '#FFF', fontSize: 13, fontWeight: '600' },
+  followBtn: { backgroundColor: '#D4AF37', paddingHorizontal: 16, paddingVertical: 6, borderRadius: 6 },
+  followBtnText: { color: '#0A1628', fontSize: 13, fontWeight: '600' },
 });

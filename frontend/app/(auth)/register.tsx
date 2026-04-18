@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../src/contexts/AuthContext';
+import { C } from '../../src/theme/colors';
 
 export default function RegisterScreen() {
   const [email, setEmail] = useState('');
@@ -23,99 +14,32 @@ export default function RegisterScreen() {
   const router = useRouter();
 
   const handleRegister = async () => {
-    if (!email || !username || !fullName || !password) {
-      Alert.alert('Error', 'Please fill in all fields');
-      return;
-    }
-
-    if (password.length < 6) {
-      Alert.alert('Error', 'Password must be at least 6 characters');
-      return;
-    }
-
+    if (!email || !username || !fullName || !password) { Alert.alert('Error', 'Please fill in all fields'); return; }
+    if (password.length < 6) { Alert.alert('Error', 'Password must be at least 6 characters'); return; }
     setLoading(true);
-    try {
-      await register(email, username, password, fullName);
-      router.replace('/(tabs)/home');
-    } catch (error: any) {
-      Alert.alert('Registration Failed', error.message);
-    } finally {
-      setLoading(false);
-    }
+    try { await register(email, username, password, fullName); router.replace('/(tabs)/home'); }
+    catch (e: any) { Alert.alert('Registration Failed', e.message); }
+    finally { setLoading(false); }
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={styles.container}
-    >
-      <ScrollView contentContainerStyle={styles.scrollContent}>
-        <View style={styles.content}>
-          <Text style={styles.logo}>Moments</Text>
-          <Text style={styles.tagline}>Sign up to see moments from friends</Text>
-
-          <View style={styles.form}>
-            <TextInput
-              testID="register-email-input"
-              style={styles.input}
-              placeholder="Email"
-              value={email}
-              onChangeText={setEmail}
-              autoCapitalize="none"
-              keyboardType="email-address"
-              placeholderTextColor="#999"
-            />
-
-            <TextInput
-              testID="register-fullname-input"
-              style={styles.input}
-              placeholder="Full Name"
-              value={fullName}
-              onChangeText={setFullName}
-              placeholderTextColor="#999"
-            />
-
-            <TextInput
-              testID="register-username-input"
-              style={styles.input}
-              placeholder="Username"
-              value={username}
-              onChangeText={setUsername}
-              autoCapitalize="none"
-              placeholderTextColor="#999"
-            />
-
-            <TextInput
-              testID="register-password-input"
-              style={styles.input}
-              placeholder="Password"
-              value={password}
-              onChangeText={setPassword}
-              secureTextEntry
-              placeholderTextColor="#999"
-            />
-
-            <TouchableOpacity
-              testID="register-submit-btn"
-              style={[styles.button, loading && styles.buttonDisabled]}
-              onPress={handleRegister}
-              disabled={loading}
-            >
-              <Text style={styles.buttonText}>
-                {loading ? 'Signing up...' : 'Sign Up'}
-              </Text>
+    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={s.container}>
+      <ScrollView contentContainerStyle={s.scroll}>
+        <View style={s.content}>
+          <Text style={s.logo}>Moments</Text>
+          <Text style={s.tagline}>Create your account</Text>
+          <View style={s.goldLine} />
+          <View style={s.form}>
+            <TextInput testID="reg-email" style={s.input} placeholder="Email" value={email} onChangeText={setEmail} autoCapitalize="none" keyboardType="email-address" placeholderTextColor={C.textMuted} />
+            <TextInput testID="reg-fullname" style={s.input} placeholder="Full Name" value={fullName} onChangeText={setFullName} placeholderTextColor={C.textMuted} />
+            <TextInput testID="reg-username" style={s.input} placeholder="Username" value={username} onChangeText={setUsername} autoCapitalize="none" placeholderTextColor={C.textMuted} />
+            <TextInput testID="reg-password" style={s.input} placeholder="Password" value={password} onChangeText={setPassword} secureTextEntry placeholderTextColor={C.textMuted} />
+            <TouchableOpacity testID="register-btn" style={[s.btn, loading && s.btnOff]} onPress={handleRegister} disabled={loading}>
+              <Text style={s.btnText}>{loading ? 'Creating...' : 'Sign Up'}</Text>
             </TouchableOpacity>
-
-            <View style={styles.divider}>
-              <View style={styles.dividerLine} />
-              <Text style={styles.dividerText}>OR</Text>
-              <View style={styles.dividerLine} />
-            </View>
-
-            <TouchableOpacity testID="login-link-btn" onPress={() => router.back()}>
-              <Text style={styles.loginText}>
-                Already have an account? <Text style={styles.loginLink}>Log in</Text>
-              </Text>
+            <View style={s.divider}><View style={s.line} /><Text style={s.divText}>OR</Text><View style={s.line} /></View>
+            <TouchableOpacity onPress={() => router.back()}>
+              <Text style={s.link}>Already have an account? <Text style={s.linkGold}>Log in</Text></Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -124,82 +48,21 @@ export default function RegisterScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF',
-  },
-  scrollContent: {
-    flexGrow: 1,
-  },
-  content: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 24,
-  },
-  logo: {
-    fontSize: 48,
-    fontWeight: 'bold',
-    color: '#4A90E2',
-    marginBottom: 8,
-  },
-  tagline: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 32,
-    textAlign: 'center',
-  },
-  form: {
-    width: '100%',
-    maxWidth: 400,
-  },
-  input: {
-    backgroundColor: '#FAFAFA',
-    borderWidth: 1,
-    borderColor: '#E0E0E0',
-    borderRadius: 8,
-    padding: 16,
-    marginBottom: 12,
-    fontSize: 16,
-  },
-  button: {
-    backgroundColor: '#4A90E2',
-    borderRadius: 8,
-    padding: 16,
-    alignItems: 'center',
-    marginTop: 12,
-  },
-  buttonDisabled: {
-    opacity: 0.6,
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  divider: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginVertical: 24,
-  },
-  dividerLine: {
-    flex: 1,
-    height: 1,
-    backgroundColor: '#E0E0E0',
-  },
-  dividerText: {
-    marginHorizontal: 16,
-    color: '#999',
-    fontSize: 14,
-  },
-  loginText: {
-    textAlign: 'center',
-    color: '#666',
-    fontSize: 14,
-  },
-  loginLink: {
-    color: '#4A90E2',
-    fontWeight: '600',
-  },
+const s = StyleSheet.create({
+  container: { flex: 1, backgroundColor: C.bg },
+  scroll: { flexGrow: 1 },
+  content: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
+  logo: { fontSize: 42, fontWeight: '700', color: C.gold, fontStyle: 'italic' },
+  tagline: { fontSize: 14, color: C.textMuted, marginTop: 8, letterSpacing: 1 },
+  goldLine: { width: 40, height: 2, backgroundColor: C.gold, marginVertical: 28, borderRadius: 1 },
+  form: { width: '100%', maxWidth: 400 },
+  input: { backgroundColor: C.surface, borderWidth: 1, borderColor: C.border, borderRadius: 10, padding: 16, marginBottom: 12, fontSize: 16, color: C.text },
+  btn: { backgroundColor: C.gold, borderRadius: 10, padding: 16, alignItems: 'center', marginTop: 8 },
+  btnOff: { opacity: 0.6 },
+  btnText: { color: C.bg, fontSize: 16, fontWeight: '700' },
+  divider: { flexDirection: 'row', alignItems: 'center', marginVertical: 24 },
+  line: { flex: 1, height: 1, backgroundColor: C.border },
+  divText: { marginHorizontal: 16, color: C.textMuted, fontSize: 13 },
+  link: { textAlign: 'center', color: C.textMuted, fontSize: 14 },
+  linkGold: { color: C.gold, fontWeight: '600' },
 });

@@ -20,10 +20,10 @@ export default function UserProfileScreen() {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity testID="back-profile-btn" onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="#2C3E50" />
+          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>{user.username}</Text>
-        <TouchableOpacity><Ionicons name="ellipsis-horizontal" size={24} color="#2C3E50" /></TouchableOpacity>
+        <TouchableOpacity><Ionicons name="ellipsis-horizontal" size={24} color="#FFFFFF" /></TouchableOpacity>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.profileTop}>
@@ -47,7 +47,7 @@ export default function UserProfileScreen() {
             <Text style={styles.actionTextSecondary}>Message</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.tabBar}><View style={styles.activeTab}><Ionicons name="grid" size={22} color="#2C3E50" /></View></View>
+        <View style={styles.tabBar}><View style={styles.activeTab}><Ionicons name="grid" size={22} color="#FFFFFF" /></View></View>
         <FlatList data={userPosts} keyExtractor={item => item.id} numColumns={3} scrollEnabled={false} columnWrapperStyle={styles.gridRow}
           renderItem={({ item }) => <TouchableOpacity style={styles.gridItem}><Image source={{ uri: item.image }} style={styles.gridImg} /></TouchableOpacity>}
           ListEmptyComponent={<View style={styles.empty}><Text style={styles.emptyText}>No posts yet</Text></View>}
@@ -58,30 +58,30 @@ export default function UserProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  headerTitle: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  headerTitle: { fontSize: 18, fontWeight: '600', color: '#FFFFFF' },
   profileTop: { flexDirection: 'row', alignItems: 'center', padding: 16 },
   avatar: { width: 84, height: 84, borderRadius: 42, marginRight: 24 },
   statsRow: { flex: 1, flexDirection: 'row', justifyContent: 'space-around' },
   stat: { alignItems: 'center' },
-  statVal: { fontSize: 18, fontWeight: '700', color: '#2C3E50' },
-  statLbl: { fontSize: 13, color: '#7F8C8D', marginTop: 2 },
+  statVal: { fontSize: 18, fontWeight: '700', color: '#FFFFFF' },
+  statLbl: { fontSize: 13, color: '#6B82A6', marginTop: 2 },
   bio: { paddingHorizontal: 16, marginBottom: 16 },
-  fullName: { fontSize: 15, fontWeight: '600', color: '#2C3E50', marginBottom: 4 },
-  bioText: { fontSize: 14, color: '#555', lineHeight: 20 },
+  fullName: { fontSize: 15, fontWeight: '600', color: '#FFFFFF', marginBottom: 4 },
+  bioText: { fontSize: 14, color: '#CBD5E1', lineHeight: 20 },
   actions: { flexDirection: 'row', paddingHorizontal: 16, marginBottom: 16, gap: 8 },
-  actionBtn: { flex: 1, backgroundColor: '#4A90E2', paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
-  followingBtn: { backgroundColor: '#F5F6F7' },
-  actionText: { color: '#FFF', fontWeight: '600', fontSize: 14 },
-  followingText: { color: '#2C3E50' },
-  actionBtnSecondary: { flex: 1, backgroundColor: '#F5F6F7', paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
-  actionTextSecondary: { color: '#2C3E50', fontWeight: '600', fontSize: 14 },
-  tabBar: { flexDirection: 'row', borderTopWidth: 1, borderTopColor: '#F0F0F0', borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  activeTab: { flex: 1, paddingVertical: 12, alignItems: 'center', borderBottomWidth: 2, borderBottomColor: '#2C3E50' },
+  actionBtn: { flex: 1, backgroundColor: '#D4AF37', paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
+  followingBtn: { backgroundColor: '#0F1D32' },
+  actionText: { color: '#0A1628', fontWeight: '600', fontSize: 14 },
+  followingText: { color: '#FFFFFF' },
+  actionBtnSecondary: { flex: 1, backgroundColor: '#0F1D32', paddingVertical: 8, borderRadius: 8, alignItems: 'center' },
+  actionTextSecondary: { color: '#FFFFFF', fontWeight: '600', fontSize: 14 },
+  tabBar: { flexDirection: 'row', borderTopWidth: 1, borderTopColor: 'rgba(255,255,255,0.06)', borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  activeTab: { flex: 1, paddingVertical: 12, alignItems: 'center', borderBottomWidth: 2, borderBottomColor: '#FFFFFF' },
   gridRow: { gap: 2, marginBottom: 2 },
   gridItem: { width: GRID, height: GRID },
   gridImg: { width: '100%', height: '100%' },
   empty: { padding: 60, alignItems: 'center' },
-  emptyText: { color: '#95A5A6', fontSize: 16 },
+  emptyText: { color: '#3D5278', fontSize: 16 },
 });

@@ -11,10 +11,10 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const Row = ({ icon, label, value, onPress, danger }: { icon: string; label: string; value?: string; onPress?: () => void; danger?: boolean }) => (
   <TouchableOpacity testID={`settings-${label.toLowerCase().replace(/\s/g, '-')}`} style={styles.row} onPress={onPress}>
-    <Ionicons name={icon as any} size={22} color={danger ? '#E74C3C' : '#2C3E50'} />
+    <Ionicons name={icon as any} size={22} color={danger ? '#FF4757' : '#FFFFFF'} />
     <Text style={[styles.rowLabel, danger && styles.dangerText]}>{label}</Text>
     {value && <Text style={styles.rowValue}>{value}</Text>}
-    <Ionicons name="chevron-forward" size={18} color="#BDC3C7" />
+    <Ionicons name="chevron-forward" size={18} color="#3D5278" />
   </TouchableOpacity>
 );
 
@@ -34,7 +34,7 @@ export default function SettingsScreen() {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity testID="back-settings-btn" onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="#2C3E50" />
+          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Settings</Text>
         <View style={{ width: 24 }} />
@@ -66,15 +66,15 @@ export default function SettingsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  headerTitle: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  headerTitle: { fontSize: 18, fontWeight: '600', color: '#FFFFFF' },
   section: { paddingTop: 20 },
-  sectionTitle: { fontSize: 13, fontWeight: '600', color: '#95A5A6', paddingHorizontal: 16, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 },
+  sectionTitle: { fontSize: 13, fontWeight: '600', color: '#3D5278', paddingHorizontal: 16, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 0.5 },
   row: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, gap: 12 },
-  rowLabel: { flex: 1, fontSize: 16, color: '#2C3E50' },
-  rowValue: { fontSize: 14, color: '#95A5A6', marginRight: 4 },
-  dangerText: { color: '#E74C3C' },
+  rowLabel: { flex: 1, fontSize: 16, color: '#FFFFFF' },
+  rowValue: { fontSize: 14, color: '#3D5278', marginRight: 4 },
+  dangerText: { color: '#FF4757' },
   footer: { padding: 40, alignItems: 'center' },
-  footerText: { color: '#BDC3C7', fontSize: 13 },
+  footerText: { color: '#3D5278', fontSize: 13 },
 });

@@ -6,19 +6,26 @@ import { StatusBar } from 'expo-status-bar';
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <StatusBar style="dark" />
-      <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right' }}>
+      <StatusBar style="light" />
+      <Stack screenOptions={{ headerShown: false, animation: 'slide_from_right', contentStyle: { backgroundColor: '#0A1628' } }}>
         <Stack.Screen name="index" />
         <Stack.Screen name="(auth)" />
         <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="notifications" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="notifications" />
         <Stack.Screen name="comments" options={{ animation: 'slide_from_bottom' }} />
-        <Stack.Screen name="chat" options={{ animation: 'slide_from_right' }} />
-        <Stack.Screen name="user-profile" options={{ animation: 'slide_from_right' }} />
-        <Stack.Screen name="followers" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="chat" />
+        <Stack.Screen name="user-profile" />
+        <Stack.Screen name="followers" />
         <Stack.Screen name="edit-profile" options={{ animation: 'slide_from_bottom' }} />
-        <Stack.Screen name="settings" options={{ animation: 'slide_from_right' }} />
+        <Stack.Screen name="settings" />
         <Stack.Screen name="add-post" options={{ animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="saved-collections" />
+        <Stack.Screen name="activity-log" />
+        <Stack.Screen name="close-friends" />
+        <Stack.Screen name="archive" />
+        <Stack.Screen name="story-highlights" />
+        <Stack.Screen name="insights" />
+        <Stack.Screen name="qr-profile" />
       </Stack>
     </AuthProvider>
   );

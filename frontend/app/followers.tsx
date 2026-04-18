@@ -33,7 +33,7 @@ export default function FollowersScreen() {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <TouchableOpacity testID="back-followers-btn" onPress={() => router.back()}>
-          <Ionicons name="arrow-back" size={24} color="#2C3E50" />
+          <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Connections</Text>
         <View style={{ width: 24 }} />
@@ -52,21 +52,21 @@ export default function FollowersScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#FFF' },
-  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
-  headerTitle: { fontSize: 18, fontWeight: '600', color: '#2C3E50' },
-  tabs: { flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
+  container: { flex: 1, backgroundColor: '#0A1628' },
+  header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
+  headerTitle: { fontSize: 18, fontWeight: '600', color: '#FFFFFF' },
+  tabs: { flexDirection: 'row', borderBottomWidth: 1, borderBottomColor: 'rgba(255,255,255,0.06)' },
   tab: { flex: 1, paddingVertical: 14, alignItems: 'center' },
-  activeTab: { borderBottomWidth: 2, borderBottomColor: '#2C3E50' },
-  tabText: { fontSize: 15, color: '#95A5A6', fontWeight: '600' },
-  activeTabText: { color: '#2C3E50' },
+  activeTab: { borderBottomWidth: 2, borderBottomColor: '#FFFFFF' },
+  tabText: { fontSize: 15, color: '#3D5278', fontWeight: '600' },
+  activeTabText: { color: '#FFFFFF' },
   userItem: { flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, paddingVertical: 12, gap: 12 },
   avatar: { width: 48, height: 48, borderRadius: 24 },
   userInfo: { flex: 1 },
-  username: { fontSize: 15, fontWeight: '600', color: '#2C3E50' },
-  fullName: { fontSize: 13, color: '#7F8C8D', marginTop: 2 },
-  followBtn: { backgroundColor: '#4A90E2', paddingHorizontal: 20, paddingVertical: 7, borderRadius: 8 },
-  followingBtn: { backgroundColor: '#F5F6F7' },
-  followText: { color: '#FFF', fontSize: 13, fontWeight: '600' },
-  followingText: { color: '#2C3E50' },
+  username: { fontSize: 15, fontWeight: '600', color: '#FFFFFF' },
+  fullName: { fontSize: 13, color: '#6B82A6', marginTop: 2 },
+  followBtn: { backgroundColor: '#D4AF37', paddingHorizontal: 20, paddingVertical: 7, borderRadius: 8 },
+  followingBtn: { backgroundColor: '#0F1D32' },
+  followText: { color: '#0A1628', fontSize: 13, fontWeight: '600' },
+  followingText: { color: '#FFFFFF' },
 });
